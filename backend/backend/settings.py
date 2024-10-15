@@ -16,7 +16,14 @@ from dotenv import load_dotenv
 import os
 
 #load_dotenv()
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file
 load_dotenv(dotenv_path=Path(BASE_DIR) / '.env')
+
+# Now you can use the environment variables
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
