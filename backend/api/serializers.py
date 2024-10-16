@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import Note
 
 
-#Serializers are more like ancore/tags to an object of a model, the model is the blueprint of an object, i.e base
+#Serializers are more like ancore/tags or checks for change to an object of a model, the model is the blueprint of an object, i.e base
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
