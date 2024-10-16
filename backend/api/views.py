@@ -11,7 +11,8 @@ class NoteListCreate(generics.ListCreateAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        return 
+        return Note.objects.filter(author=user) 
+    ### 
 # Create your views here.
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
