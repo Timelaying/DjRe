@@ -9,10 +9,10 @@ class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
+    def get_queryset(self): 
         user = self.request.user
-        return Note.objects.filter(author=user) 
-    ### 
+        return Note.objects.filter(author=user) #return notes objects, filtered by user
+        
 # Create your views here.
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
