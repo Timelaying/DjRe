@@ -9,11 +9,13 @@ function Form({route, method}) {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
+    const name = method === "login" ? "Login" : "Register"
+
     const handleSubmit = (e) => {
         e.preventDefault()
     }
 
     return <form onSubmit={handleSubmit} className="form-conatainer">
-        
+
     </form>
 }
