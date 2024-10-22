@@ -16,6 +16,12 @@ function Form({route, method}) {
     }
 
     return <form onSubmit={handleSubmit} className="form-conatainer">
-
+        <h1>{name}</h1>
+        <input
+            className="form-input"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
     </form>
 }
