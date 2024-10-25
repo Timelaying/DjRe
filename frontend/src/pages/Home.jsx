@@ -3,10 +3,13 @@ import api from "../api"
 
 function Home() {
     const [notes, setNotes] = useState([]);
-    const [content, setContent] = useState(""
+    const [content, setContent] = useState("")
     const [title, setTitle] useState("")
 
-    )
+    const getNote = () => {
+        api.get("/api/notes/")
+    }
+    
     return <div>Home...</div>
 }
 
