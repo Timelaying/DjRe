@@ -18,6 +18,11 @@ function Home() {
       .catch((err) => alert(err));
   };
 
+  //Deleting Notes
+  const deleteNote = (id) => {
+    api.delete(`/`)
+  }
+
   return <div>Home...</div>;
 }
 
