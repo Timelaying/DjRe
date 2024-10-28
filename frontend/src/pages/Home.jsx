@@ -40,7 +40,11 @@ function Home() {
     getNotes();
   }
 
-  return <div>Home...</div>;
+  return <div>
+    <div>
+      <h2>Notes</h2>
+    </div>
+  </div>;
 }
 
 export default Home;
