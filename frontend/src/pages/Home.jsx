@@ -20,10 +20,11 @@ function Home() {
 
   //Deleting Notes
   const deleteNote = (id) => {
-    api.delete(`/api/notes/delete/${id}/`).then(res) => {
+    api.delete(`/api/notes/delete/${id}/`).then((res) => {
       if (res.status === 204) alert("Note Deleted!")
       else alert ("Failed to delete note.")
-    }
+    }).catch((error) => alert(error))
+    getNotes()
   }
 
   return <div>Home...</div>;
