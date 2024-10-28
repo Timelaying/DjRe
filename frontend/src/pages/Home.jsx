@@ -25,6 +25,19 @@ function Home() {
       else alert ("Failed to delete note.")
     }).catch((error) => alert(error))
     getNotes()
+  };
+
+  //creating note
+  const createNote = (e) => {
+    e.preventDefault();
+    api
+    .post("/api/notes/", {content, title})
+    .then((res) => {
+      if (res.status === 201) alert("Note Created");
+      else alert("Failed to make note");
+    })
+    .catch((err) => alert(err));
+    getNotes();
   }
 
   return <div>Home...</div>;
