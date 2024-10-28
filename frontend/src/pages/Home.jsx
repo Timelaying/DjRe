@@ -46,7 +46,7 @@ function Home() {
     </div>
     <h2>Create a Note</h2>
     <form onSubmit={createNote}>
-      <label htmlFor="titile">Title</label>
+      <label htmlFor="title">Title</label>
       <br />
       <input
           type="text"
@@ -54,6 +54,16 @@ function Home() {
           name="title"
           required
           onChange={(e) => setTitle(e.target.value)}
+          value={title}
+        />
+        <label htmlFor="content">Content</label>
+        <br />
+        <textarea
+          id="content"
+          name="content"
+          required
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
     </form>
   </div>;
 }
