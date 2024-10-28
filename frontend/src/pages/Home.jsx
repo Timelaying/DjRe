@@ -44,6 +44,17 @@ function Home() {
     <div>
       <h2>Notes</h2>
     </div>
+    <h2>Create a Note</h2>
+    <form onSubmit={createNote}>
+      <label htmlFor="titile">Title</label>
+      <br />
+      <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          onChange={(e) => setTitle(e.target.value)}
+    </form>
   </div>;
 }
 
