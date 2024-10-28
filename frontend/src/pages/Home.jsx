@@ -23,8 +23,9 @@ function Home() {
     api.delete(`/api/notes/delete/${id}/`).then((res) => {
       if (res.status === 204) alert("Note Deleted!")
       else alert ("Failed to delete note.")
+      getNotes()
     }).catch((error) => alert(error))
-    getNotes()
+  
   };
 
   //creating note
@@ -35,9 +36,10 @@ function Home() {
     .then((res) => {
       if (res.status === 201) alert("Note Created");
       else alert("Failed to make note");
+      getNotes();
     })
     .catch((err) => alert(err));
-    getNotes();
+    
   }
 
   return <div>
