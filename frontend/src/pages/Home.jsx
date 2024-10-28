@@ -64,6 +64,9 @@ function Home() {
           required
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          ></textarea>
+          <br />
+          <input type="submit" value="Submit"></input>
     </form>
   </div>;
 }
