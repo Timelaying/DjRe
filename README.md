@@ -94,3 +94,11 @@ Contributions are welcome! Please open an issue to propose a feature or report a
 ## License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+## Deploy (Render + Vercel + Neon)
+
+- **Database:** a free Postgres database from [Neon](https://neon.tech). Copy its connection string.
+- **API (Render web service):** root directory `backend`, runtime Python 3, build command `bash build.sh`, start command `gunicorn backend.wsgi`. Environment variables: `DATABASE_URL` (the Neon string), `SECRET_KEY` (any long random value) and `PYTHON_VERSION` (for example `3.12.7`).
+- **Frontend (Vercel):** root directory `frontend`, framework Vite. Environment variable `VITE_API_URL` set to the Render service URL (no trailing slash). `frontend/vercel.json` makes client-side routes such as `/login` work on refresh.
+
+Free Render services sleep when idle, so the first request after a quiet period takes about 50 seconds.
