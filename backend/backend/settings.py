@@ -171,5 +171,13 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOWS_CREDENTIALS = True
+# Only the listed frontends may call the API from a browser.
+# Set CORS_ALLOWED_ORIGINS to a comma-separated list, for example
+# https://djre-notes.vercel.app (no trailing slash).
+CORS_ALLOWED_ORIGINS = [
+    o.strip()
+    for o in os.getenv(
+        "CORS_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173"
+    ).split(",")
+    if o.strip()
+]
